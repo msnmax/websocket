@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <style>
+
+            #displayText {
+                white-space: pre-wrap;
+            }
+        </style>
+ 
+</head>
+<body>
+    <div id="dataDisplay" style="margin-top: 20px; padding: 10px; border: 1px solid #ccc;"></div>
+
+    <script>
+        async function fetchData() {
+            try {
+                let response = await fetch('/dump');
+                if (response.ok) {
+                    let data = await response.text();
+                    document.getElementById('dataDisplay').innerText = data;
+                } else {
+                    document.getElementById('dataDisplay').innerText = 'Error fetching data';
+                }
+            } catch (error) {
+                document.getElementById('dataDisplay').innerText = 'Error connecting to server';
+            }
+        }
+    </script>
+
+    <button onclick="fetchData()">Dump</button>
+</body>
+</html>
