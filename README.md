@@ -14,7 +14,7 @@ For dumprecode need to install flask package
 <pre><code>python app.py</code></pre>
 
 ## Architecture
-![Architecture](architecture.png)
+![Architecture](https://github.com/msnmax/websocket/blob/main/architecture.PNG)
 
 ## Testing result
  Following png dir.
